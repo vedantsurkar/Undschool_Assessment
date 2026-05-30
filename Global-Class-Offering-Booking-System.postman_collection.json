@@ -1,0 +1,257 @@
+{
+  "info": {
+    "_postman_id": "b709d51b-92df-436c-b791-f29f6e393808",
+    "name": "UndoSchool",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "36924933"
+  },
+  "item": [
+    {
+      "name": "Create Offering",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"courseId\": 1,\r\n  \"name\": \"Advanced Python Weekend Batch\",\r\n  \"teacherTimezone\": \"America/New_York\",\r\n  \"sessions\": [\r\n    {\r\n      \"startTime\": \"2025-07-05T18:00:00\",\r\n      \"endTime\": \"2025-07-05T19:00:00\"\r\n    },\r\n    {\r\n      \"startTime\": \"2025-07-12T18:00:00\",\r\n      \"endTime\": \"2025-07-12T19:00:00\"\r\n    }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/teachers/1/offerings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "teachers",
+            "1",
+            "offerings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "View Available Offerings",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "GET http://localhost:8080/api/parents/1/offerings",
+          "protocol": "GET http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "parents",
+            "1",
+            "offerings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Sessions",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"sessions\": [\r\n    {\r\n      \"startTime\": \"2025-07-19T18:00:00\",\r\n      \"endTime\": \"2025-07-19T19:00:00\"\r\n    }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/teachers/offerings/4/sessions",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "teachers",
+            "offerings",
+            "4",
+            "sessions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "View Teacher Offerings",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/teachers/1/offerings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "teachers",
+            "1",
+            "offerings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "View Offerings as Parent",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/parents/3/offerings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "parents",
+            "3",
+            "offerings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Book Offering",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"offeringId\": 4\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/parents/3/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "parents",
+            "3",
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "View Parent Bookings",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/parents/3/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "parents",
+            "3",
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Overlapping Offering",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"courseId\": 3,\r\n  \"name\": \"Overlapping Public Speaking Batch\",\r\n  \"teacherTimezone\": \"America/New_York\",\r\n  \"sessions\": [\r\n    {\r\n      \"startTime\": \"2025-07-05T18:30:00\",\r\n      \"endTime\": \"2025-07-05T19:30:00\"\r\n    }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/teachers/1/offerings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "teachers",
+            "1",
+            "offerings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Try Booking Overlapping Offering",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"offeringId\": 5\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/parents/3/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "parents",
+            "3",
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
